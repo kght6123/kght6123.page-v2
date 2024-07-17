@@ -1,12 +1,12 @@
 export default {
   footer: (
     <small style={{ display: 'block', marginTop: '8rem' }}>
-      <time>{YEAR}</time> © kght6123.
+      <time>2024</time> Copyright kght6123.
       <a href="/feed.xml">RSS</a>
       <style jsx>{`
         a {
           float: right;
-        }
+        }s
         @media screen and (max-width: 480px) {
           article {
             padding-top: 2rem;

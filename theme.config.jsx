@@ -30,8 +30,8 @@ export default {
   darkMode: false,
   navs: [
     {
-      url: 'https://github.com/shuding/nextra',
-      name: 'Nextra'
-    }
+      url: '/privacy-policy',
+      name: 'Policy'
+    },
   ]
 }

@@ -1,23 +1,58 @@
+
 @font-face {
-  font-family: 'Inter var';
+  font-family: 'MPLUSRounded1c';
   font-style: normal;
-  font-weight: 100 900;
+  font-weight: 100;
   font-display: block;
-  src: url(/fonts/Inter-roman.latin.var.woff2) format('woff2');
+  src: url(/fonts/MPLUSRounded1c-Thin.woff2) format('woff2');
 }
 @font-face {
-  font-family: 'Inter var';
-  font-style: italic;
-  font-weight: 100 900;
+  font-family: 'MPLUSRounded1c';
+  font-style: normal;
+  font-weight: 300;
   font-display: block;
-  src: url(/fonts/Inter-italic.latin.var.woff2) format('woff2');
-  font-named-instance: 'Italic';
+  src: url(/fonts/MPLUSRounded1c-Light.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'MPLUSRounded1c';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(/fonts/MPLUSRounded1c-Regular.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'MPLUSRounded1c';
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url(/fonts/MPLUSRounded1c-Medium.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'MPLUSRounded1c';
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url(/fonts/MPLUSRounded1c-Bold.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'MPLUSRounded1c';
+  font-style: normal;
+  font-weight: 800;
+  font-display: block;
+  src: url(/fonts/MPLUSRounded1c-ExtraBold.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'MPLUSRounded1c';
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url(/fonts/MPLUSRounded1c-Black.woff2) format('woff2');
 }
 
 body {
-  font-family: 'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: 'MPLUSRounded1c', system-ui, -apple-system, BlinkMacSystemFont,
+  'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: subpixel-antialiased;
   font-feature-settings: 'case' 1, 'cpsp' 1, 'dlig' 1, 'cv01' 1, 'cv02',
     'cv03' 1, 'cv04' 1;

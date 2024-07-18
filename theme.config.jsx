@@ -29,9 +29,9 @@ export default {
   postFooter: null,
   darkMode: false,
   navs: [
-    {
-      url: '/privacy-policy',
-      name: 'Policy'
-    },
+    // {
+    //   url: '/privacy-policy',
+    //   name: 'Policy'
+    // },
   ]
 }

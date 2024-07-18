@@ -1,5 +1,6 @@
 ---
-title: プライバシーポリシー
+type: page
+title: Policy
 date: 2024/7/17
 description: 当サイトについて
 tag: information

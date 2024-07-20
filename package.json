@@ -9,7 +9,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "rss": "node ./scripts/gen-rss.js"
+    "rss": "node ./scripts/gen-rss.js",
+    "export": "npm run rss && next build && rm -R docs/* ; cp -R out docs"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

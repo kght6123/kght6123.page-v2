@@ -1,4 +1,4 @@
-const { promises: fs } = require('fs')
+const { promises: fs, Dirent } = require('fs')
 const path = require('path')
 const RSS = require('rss')
 const matter = require('gray-matter')
@@ -6,8 +6,8 @@ const matter = require('gray-matter')
 async function generate() {
   const feed = new RSS({
     title: 'げぐはつぺーじ',
-    site_url: 'https://yoursite.com',
-    feed_url: 'https://yoursite.com/feed.xml'
+    site_url: 'https://kght6123-page-v2.vercel.app/',
+    feed_url: 'https://kght6123-page-v2.vercel.app/feed.xml'
   })
 
   const posts = await fs.readdir(path.join(__dirname, '..', 'pages', 'posts'))
@@ -16,9 +16,10 @@ async function generate() {
     posts.map(async (name) => {
       if (name.startsWith('index.')) return
 
-      const content = await fs.readFile(
-        path.join(__dirname, '..', 'pages', 'posts', name)
-      )
+      const tatgetPath = path.join(__dirname, '..', 'pages', 'posts', name)
+      if ((await fs.lstat(tatgetPath)).isDirectory()) return
+
+      const content = await fs.readFile(tatgetPath)
       const frontmatter = matter(content)
 
       allPosts.push({
@@ -31,7 +32,6 @@ async function generate() {
       })
     })
   )
-
   allPosts.sort((a, b) => new Date(b.date) - new Date(a.date))
   allPosts.forEach((post) => {
       feed.item(post)

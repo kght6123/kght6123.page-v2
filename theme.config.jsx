@@ -1,4 +1,24 @@
+// import Cusdis from 'nextra-theme-blog/cusdis'
+
 export default {
+  // comments: <Cusdis />,
+  // components: {
+  //   h1: ({ children }) => (
+  //     <h1
+  //       style={{
+  //         WebkitBackgroundClip: 'text',
+  //         WebkitTextFillColor: 'transparent',
+  //         backgroundClip: 'text',
+  //         backgroundImage: 'linear-gradient(90deg,#7928CA,#FF0080)'
+  //       }}
+  //     >
+  //       {children}
+  //     </h1>
+  //   )
+  // },
+  // cusdis: {
+  //   appId: 'a2d11511-7012-4254-9483-cb49c8f4dfe8'
+  // },
   footer: (
     <small style={{ display: 'block', marginTop: '8rem' }}>
       <time>2024</time> Copyright kght6123.
@@ -26,12 +46,13 @@ export default {
     </>
   ),
   readMore: 'Read More →',
+  dateFormatter: date => `Last updated at ${date.toDateString()}`,
   postFooter: null,
   darkMode: false,
   navs: [
-    {
-      url: '/privacy-policy',
-      name: 'Policy'
-    },
+    // {
+    //   url: '/privacy-policy',
+    //   name: 'Policy'
+    // },
   ]
 }

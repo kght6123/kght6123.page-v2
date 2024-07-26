@@ -47,6 +47,7 @@ export default {
         property="og:image"
         content={`https://placehold.jp/50/000000/ffffff/1200x600.png?text=${title}&css=%7B%22border-radius%22%3A%2215px%22%2C%22background%22%3A%22%20-webkit-gradient(linear%2C%20left%20top%2C%20left%20bottom%2C%20from(%23111111)%2C%20to(%23555555))%22%7D`}
       />
+      <meta name="twitter:image" content={`https://placehold.jp/50/000000/ffffff/1200x600.png?text=${title}&css=%7B%22border-radius%22%3A%2215px%22%2C%22background%22%3A%22%20-webkit-gradient(linear%2C%20left%20top%2C%20left%20bottom%2C%20from(%23111111)%2C%20to(%23555555))%22%7D`} />
     </>
   ),
   useNextSeoProps: () => ({

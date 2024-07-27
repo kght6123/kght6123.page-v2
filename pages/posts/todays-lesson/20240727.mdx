@@ -1,0 +1,31 @@
+---
+title: きょうのまなび（2024/07/27）
+date: 2024/7/27
+description: きょうのまなび（2024/07/27）
+tag: きょうのまなび
+author: You
+---
+
+## 1. 本番系ではAlpine Linuxは使わない方が良さそう？
+
+「[2024年版のDockerfileの考え方＆書き方](https://future-architect.github.io/articles/20240726a/)」の記事を見て、よくその場しのぎでマルチステージビルドでないDockerfileを書いたりするので、マルチステージビルドも検討した方が良さそうだなと思いながら見ていましたが、以下の[どこかで聞き覚えのある文章](https://future-architect.github.io/articles/20240726a/#イメージが小さいのは良いことだが…)が記載されていました。
+
+> 公式ドキュメントではAlpineを勧めていますが、LinuxのC言語のランタイムのDebianなどが使うglibcとAlpineのmuslを比べると実行性能が3-5割程度変わることがあります。
+
+> Alpineを選んで25MB変わったところでストレージのコストや転送時間は対して変わりませんが、CPU性能が落ちて、その分余計に処理時間が伸びて増えるコストの方が膨大なので、Debian系のベースイメージを使うべきです。
+
+少し前に誰かがAlpine Linuxは性能が悪いので、コンテナOSはAmazon Linuxとか普通のLinuxを使って！と言っていたので、そのときは理由がうまく見つけられず、修正も楽だったので素直に変更しましたが、この記事を見てこのあたりのことを言われていたのかな？と思いました。
+
+今、調べてみると以下のような記事もあります。
+
+- とりあえずでDockerイメージにAlpine Linuxを選択するのはやめましょうという話 https://engineering.nifty.co.jp/blog/26586
+
+公式がなんでAlpineを推しているのかは謎ですが、、、、
+
+その時のことを思い出してみると、当時は[Amazon CorrettoのDockerイメージ](https://hub.docker.com/_/amazoncorretto)のデフォルトがAlpine Linuxだったので、Amazon Linux 2023に後から変更しましたが、
+今、DockerHubを見てみるとデフォルトがAlpine LinuxからAmazon Linux 2023に変わっていました。Alpine Linux離れも起きつつある？のかなーと思いました。
+（ただAmazonなので、政治的な理由でAmazon Linuxになったのかもしれませんが、、、一概には言えなさそう。）
+
+ただ、性能低下は困るので、今後、Dockerイメージを使う時はAlpine Linuxのイメージでないか事前にチェックする方が良さそうだなーと思いました。イメージの容量を削減するにしても、マルチステージビルドで実行環境にdistrolessを使うとかの方法も検討してみたいです。
+
+[GitHubで記事を見る](https://github.com/kght6123/kght6123.page-v2/blob/main/pages/posts/todays-lesson/20240727.mdx)

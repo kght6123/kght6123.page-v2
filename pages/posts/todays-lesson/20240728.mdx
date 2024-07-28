@@ -1,0 +1,43 @@
+---
+title: きょうのまなび（2024/07/28）
+date: 2024/7/28
+description: きょうのまなび（2024/07/28）
+tag: きょうのまなび
+author: You
+---
+
+きょうのまなびも、RSSフィードのリンクに追加されるようになりました！
+（RSSフィードのリンクは[こちら](/feed.xml)）
+
+## 1. 「GitHubの削除されたリポジトリや非公開のリポジトリに誰でもアクセスできてしまうのは仕様通り」を読んで
+
+https://gigazine.net/news/20240725-github-anyone-can-access-hidden-repository/
+
+安定のGigazineあおり記事？でした😅
+
+どこかでも共有した気がしますが、要約すると削除されたリポジトリも非公開のリポジトリも関連するリポジトリのコミットログが公開リポジトリにあると、
+そのログ以外もハッシュが分かればアクセスできてしまう
+、、、という感じに見えます。
+
+Git的にはすべての差分をリポジトリに持っているので、フォークしても元のリポジトリが削除されても同じリポジトリが公開で残っているので、そこにすべての差分が残っていてもおかしくないですね。
+
+通常、注意できていると思いますが、改めて公開リポジトリを作るときは非公開リポジトリが残らないように注意したいです。
+
+## 2. 「【index.ts】そのVSCodeタブ名、わかりづらくない？【page.tsx】」を読んで
+
+https://zenn.dev/bmth/articles/vscode-tab-display-name-alias
+
+タブの大きさが長くなってしまいますが、わかりやすくなる良いTipsでした！
+
+結局、最後に書いてあるClassMethodさんのタブに絵文字を使う方を採用してしまいましたが、、、、、😅
+
+![Before](/images/posts/20240728/before.png)
+
+![After](/images/posts/20240728/after.png)
+
+ちなみに、開いているエディターの方も分かりやすくなったのは思わぬ副産物でした。
+
+![開いているエディター](/images/posts/20240728/hiraiteiru-editor.png)
+
+
+[GitHubで記事を見る](https://github.com/kght6123/kght6123.page-v2/blob/main/pages/posts/todays-lesson/20240728.mdx)

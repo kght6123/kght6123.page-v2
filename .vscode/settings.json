@@ -1,0 +1,7 @@
+{
+  // "workbench.editor.customLabels.patterns": {
+  //   "**/app/**/{*.tsx,route.ts,actions.ts}": "🌐 ${dirname(1)}/${dirname} ∙ ${filename}",
+  //   "**/pages/**/{*.tsx,*.jsx,*.mdx,route.ts,actions.ts}": "📄 ${dirname(1)}/${dirname} ∙ ${filename}",
+  //   "**/components/**/*": "🧩 ${dirname}/${filename}.${extname}"
+  // }
+}

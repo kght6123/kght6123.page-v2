@@ -10,7 +10,7 @@ async function generate() {
     feed_url: 'https://kght6123-page-v2.vercel.app/feed.xml'
   })
 
-  const posts = await fs.readdir(path.join(__dirname, '..', 'pages', 'posts'))
+  const posts = await fs.readdir(path.join(__dirname, '..', 'pages', 'posts'), { recursive: true })
   const allPosts = []
   await Promise.all(
     posts.map(async (name) => {

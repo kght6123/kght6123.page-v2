@@ -1,0 +1,78 @@
+---
+title: きょうのまなび（2024/07/30）
+date: 2024/7/29
+description: きょうのまなび（2024/07/30）
+tag: きょうのまなび
+author: You
+---
+
+きょうのまなびも、RSSフィードのリンクに追加されるようになりました！
+（RSSフィードのリンクは[こちら](/feed.xml)）
+
+## 1. OpenVPN サーバの ccd ファイル参照で Permission denied エラー
+
+GCPに個人でOpenVPNサーバを立てているのですが、最近、`Permission denied`エラーが出てクライアントのIP固定ができなくなりました。
+
+```sh
+$ systemctl status openvpn-server@server
+# 省略
+     Active: active (running) since Sat 2024-07-27 06:12:09 UTC; 2 days ago
+# 省略
+Jul 29 14:37:59 home-server.us-west1-b.c.kght6123.internal openvpn[965387]: homeserver/124.100.25.134:64518 Could not access file 'ccd/servername': Permission denied (errno=13)
+Jul 29 14:37:59 home-server.us-west1-b.c.kght6123.internal openvpn[965387]: homeserver/124.100.25.134:64518 Could not access file 'ccd/DEFAULT': Permission denied (errno=13)
+# 省略
+```
+
+調べてみると、サイレントでOpenVPNがアップデートされて再起動されていたので、それが原因かもしれません。
+
+ファイル権限っぽいので、権限を変更してみましたが解決せず。。。
+
+```sh
+# 権限の変更
+$ sudo chmod 644 /etc/openvpn/server/ccd/servername
+$ sudo chown nobody:nobody /etc/openvpn/server/ccd/servername
+$ sudo ls -alt /etc/openvpn/server/ccd/servername
+-rw-r--r--. 1 nobody nobody 40 May 23 13:30 /etc/openvpn/server/ccd/servername
+```
+
+いろいろと調べてみたら、nobodyユーザーが使われているので、それを変更してみました。
+（もともとnobodyユーザーなのでおかしい）
+
+```sh
+# 新しいユーザーを作成（すでにあるエラーになる）
+$ sudo useradd -r -d /etc/openvpn -s /sbin/nologin openvpn
+# CCDディレクトリの所有者を新しいユーザーに変更
+$ sudo chown -R openvpn:openvpn /etc/openvpn/server/ccd
+# server.confにユーザーを指定
+$ sudo vi /etc/openvpn/server/server.conf
+# 修正ファイルを確認
+$ sudo diff /etc/openvpn/server/server.conf.20240522 /etc/openvpn/server/server.conf
+22,23c22,23
+< user nobody
+< group nobody
+---
+> user openvpn
+> group openvpn
+28a29
+> client-config-dir ccd
+ 
+# OpenVPNを再起動 → 解決！
+sudo systemctl restart openvpn-server@server
+sudo systemctl status openvpn-server@server
+```
+
+なぜか、解決しました😅
+
+nobodyユーザーの扱いが変わったのかな、、、？
+
+## 2. Mac/SafariのBasic認証がおかしい
+
+上記の問題で、OpenVPNのサーバーへのアクセスも解決して早速、VPN経由で公開しているサーバへアクセスしたのですがBasic認証がおかしくなりました。（何度やっても400エラー）
+
+仕方がないので、キーチェーンアクセスで認証情報を削除して再度入力してみたら、解決しました。
+（ここでも罠があって、BASIC認証のユーザとパスワードをブラウザで保存するとまた同じ状況に戻るので、注意する）
+
+あと余談ですが、MacOS 15から「パスワード」アプリが追加されますが、
+BASIC認証はそのままキーチェーンアクセスに存在するようです。（Developer Previewの場合）
+
+[GitHubで記事を見る](https://github.com/kght6123/kght6123.page-v2/blob/main/pages/posts/todays-lesson/20240729.mdx)

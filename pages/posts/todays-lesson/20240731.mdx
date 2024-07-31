@@ -1,0 +1,76 @@
+---
+title: きょうのまなび（2024/07/31）
+date: 2024/7/31
+description: きょうのまなび（2024/07/31）
+tag: きょうのまなび
+author: You
+---
+
+きょうのまなびも、RSSフィードのリンクに追加されるようになりました！
+（RSSフィードのリンクは[こちら](/feed.xml)）
+
+## 1. Ryzen AIの小型PCについて、調べてみた
+
+ちょっと古いですが、以下のようなテキスト生成AIがローカル実行できる記事を見つけました。
+
+メインのMacbook Pro 16inch M1 Pro(RAM:16GB)のメモリが足りなくて困っていたので、久しぶりにRyzenのPCを買ってみようかなと調べました。ただ、色々と調べましたが、すぐには決断できなさそうなのでとりあえず供養です。
+
+- [米AMD、RyzenやRadeonで生成AIをローカル実行するハウツーガイドを公開](https://www.itmedia.co.jp/pcuser/articles/2403/21/news138.html)
+
+### 必要スペックの検討
+
+どうせなら、NPUを搭載していて新しめの構成の方が長く使えるので、
+次の記事を参考に「Ryzen 8040シリーズ」あたりが良いかな？と思いました。
+
+- [AMD、AI PCを実現する「Ryzen 8040」シリーズ発表](https://pc.watch.impress.co.jp/docs/news/1552464.html#table-0-0)
+
+たぶん、購入したらゲームとかもするのでGPUはなるべく高い性能の「Radeon 780M」で、小型PCが色々と出ている「Ryzen 9 8945HS」とか「Ryzen 7 8845HS」、デスクトップなら「8040シリーズ」ではありませんが「8700G」あたりが良さそうです。
+
+ノートPCは、愛用のMacbook Pro 16inch M1 Proがあるので、デスクトップPCでいいかなと思っています。
+
+その他はメモリは32GB以上可、ストレージは不問、GPUはRadeon 780M以上。あとは小型でUSB-C直結でモバイルディスプレイにつないで使えるようなものが良いです。
+
+### 調査結果
+
+色々と探してみたところ、以下のようなものがありました。
+（他にもありましたが価格とか好みで以下のものが良さそうです）
+
+- AMD Ryzen 7 8700G BOX + ASRock DeskMeet X600 ベアボーン セット ¥83,023
+  - https://www.xprice.co.jp/d.php?id=300000150049201&status=1
+  - メモリとストレージ、OSを追加で購入が必要
+  - USB-C給電できない
+
+- MINISFORUM UM890 Pro / Ryzen 9 8945HS ￥138,980 - ¥26,406 = ¥112,574
+  - https://www.amazon.co.jp/dp/B0D866QGTD
+  - メモリとストレージ、OSをは付属（32GB / 1TB / Windows 11 Pro）
+
+- GEEKOM ミニPC A8 / Ryzen 9 8945HS ¥134,000
+  - https://www.amazon.co.jp/dp/B0D22FYFL4
+  - メモリとストレージ、OSをは付属（32GB / 2TB / Windows 11 Pro）
+
+- GZBOX ミニPC AMD Ryzen 7 8845HS ￥65,999
+  - https://amzn.asia/d/0bWMgzoM
+  - メモリとストレージ、OSを追加で購入が必要
+
+### まとめ
+
+一番上のベアボーンが一番拡張性が高くて良いですが、USB-C給電で使えないので悩みどころです。
+
+となると、、、、次に良さそうなのは、知名度もあるし「MINISFORUM UM890 Pro」かな、、、とは思っています。公式で外付けのグラフィックカードを接続するアダプターとかありますし、メモリも64GBまで増設可能なので、長く使うなら良さそうだなーと大まかに考えています。
+
+ちなみに8700Gと8945HSの性能差はあまりないらしいです。ただ、CPUのアーキテクチャが8700Gの方は古いです。
+
+どちらも、そこそこお値段もするのでもう少し検討しようと思っています。
+
+MシリーズのMacのメモリ容量は、普通のPCと違って感覚値2倍以上とかなんとか言われていたので16GBを買っていたのですが（Macbook Airの8GBが少ない論争から）、物理的にたくさん容量を食う場合は流石に普通に足りないですね、、、、
+
+円安ドル高で高すぎて日和ってしまいますが、まずこっちを買い替えた方が良いかもしれません。。。
+
+### 余談
+
+そういえば私は全く興味ないですが、Ryzen AIは画像生成AIもローカルで実行できるらしいですね！
+
+- [Ryzen/Radeon向けの画像生成AI「Amuse 2.0 Beta」。Stable Diffusionベース](https://pc.watch.impress.co.jp/docs/news/1612040.html)
+- [Introducing Amuse 2.0 Beta with AMD XDNA™ Super Resolution: a fully local, AI experience](https://www.reddit.com/r/Amd/comments/1ee9rzm/introducing_amuse_20_beta_with_amd_xdna_super/?rdt=48054)
+
+MacのMシリーズやiPhone、Android、ARM on Windowsなども含めてNPUが搭載されているので、これからはローカルで生成AIを使うことが増えていくのかなーとか思いますね。

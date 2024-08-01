@@ -1,0 +1,75 @@
+---
+title: きょうのまなび（2024/08/01）
+date: 2024/8/01
+description: きょうのまなび（2024/08/01）
+tag: きょうのまなび TypeScript JavaScript
+author: You
+---
+
+きょうのまなびも、RSSフィードのリンクに追加されるようになりました！
+（RSSフィードのリンクは[こちら](/feed.xml)）
+
+昨日(7/31)の学びは[こちら](/posts/todays-lesson/20240731)です。
+
+## 1. TypeScript（JavaScript）で分岐を減らす書き方
+
+今日のコードレビューでの学びです。
+
+いつも通り、愚直に下記のようにJSXに分岐を書いていました。確かこんなアイコンとラベルがあるコンポーネントだったと思います。
+
+```tsx
+export const HogeHoge = ({ status, hogeType, hogeName }: { status: "ok" | "ng" | "none", hogeType: "hoge1" | "hoge2" | "hoge3" }) => {
+	return (<>
+    {status === "none" && <None />}
+    {status === "ok" && hogeType === "hoge1" && <Hoge1Icon />}
+    {status === "ok" && hogeType === "hoge2" && <Hoge2Icon />}
+    {status === "ok" && hogeType === "hoge3" && <Hoge3Icon />}
+    {status === "ng" && <ErrorIcon />}
+    {status !== "ng" && <Label>{hogeName}</Label>}
+    {status === "ng" && <ErrorLabel>{hogeName}</ErrorLabel>}
+	</>)
+}
+```
+
+これを、分岐を減らす書き方の方が良いよっていうことで、下記のように書き換えました。
+
+```tsx
+export const HogeHoge = ({ status, hogeType, hogeName }: { status: "ok" | "ng" | "none", hogeType: "hoge1" | "hoge2" | "hoge3" }) => {
+	const iconView = {
+		"ng": () => (<ErrorIcon />),
+		"ok": ({ hogeType }: { hogeType?: "hoge1" | "hoge2" | "hoge3" }) => ({
+			"hoge1": <Hoge1Icon />,
+			"hoge2": <Hoge2Icon />,
+			"hoge3": <Hoge3Icon />,
+		}[hogeType]),
+		"none": () => (<None />),
+	};
+	const labelView = {
+		"ng": <ErrorLabel>{hogeName}</ErrorLabel>,
+		"ok": <Label>{hogeName}</Label>,
+		"none": <Label>{hogeName}</Label>,
+	}
+	return (<>
+		{iconView[status]({ hogeType })}
+    {nameView[status]}
+	</>)
+}
+```
+
+interfaceとかtypeの定義が面倒なので省略しましたが、雰囲気はこんな感じでした。
+行数は増えてしまいましたが、見事に分岐が減りました。
+
+実際の方はundefinedが許可だったので、配列の添字を`iconView[status || "default"]`のようにしていたと思います。
+
+メリデメはあると思いますが、分岐が減ることで、コードが読みやすくなるのは確かですね。
+
+メリット
+- 分岐が減る、分岐を追加しやすい
+- 特に分岐が多くて見づらい場合に有効
+
+デメリット
+- 全体像が分かりにくくなる（iconViewやlabelViewが別コンポーネントになると特に）
+- 分岐が少ない場合は逆に見づらくなる
+
+その場その場でコードの再利用の可能性や、修正の可能性、コード全体量からの可読性を考えて、適切な書き方を選ぶのが良さそうです。
+（私的にはこのぐらいのコンポーネントの分岐なら、分岐を減らさない書き方がみやすいかな、、、）

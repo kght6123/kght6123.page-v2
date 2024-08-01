@@ -4,8 +4,44 @@
         <description><![CDATA[げぐはつぺーじ]]></description>
         <link>https://kght6123-page-v2.vercel.app/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 29 Jul 2024 13:54:22 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 01 Aug 2024 13:48:50 GMT</lastBuildDate>
         <atom:link href="https://kght6123-page-v2.vercel.app/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[きょうのまなび（2024/08/01）]]></title>
+            <description><![CDATA[きょうのまなび（2024/08/01）]]></description>
+            <link>/posts/todays-lesson/20240801</link>
+            <guid isPermaLink="true">/posts/todays-lesson/20240801</guid>
+            <category><![CDATA[きょうのまなび TypeScript JavaScript]]></category>
+            <dc:creator><![CDATA[You]]></dc:creator>
+            <pubDate>Wed, 31 Jul 2024 15:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[きょうのまなび（2024/07/31）]]></title>
+            <description><![CDATA[きょうのまなび（2024/07/31）]]></description>
+            <link>/posts/todays-lesson/20240731</link>
+            <guid isPermaLink="true">/posts/todays-lesson/20240731</guid>
+            <category><![CDATA[きょうのまなび 生成AI RyzenAI]]></category>
+            <dc:creator><![CDATA[You]]></dc:creator>
+            <pubDate>Tue, 30 Jul 2024 15:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[きょうのまなび（2024/07/30）]]></title>
+            <description><![CDATA[きょうのまなび（2024/07/30）]]></description>
+            <link>/posts/todays-lesson/20240730</link>
+            <guid isPermaLink="true">/posts/todays-lesson/20240730</guid>
+            <category><![CDATA[きょうのまなび OpenVPN Basic認証 Safari]]></category>
+            <dc:creator><![CDATA[You]]></dc:creator>
+            <pubDate>Mon, 29 Jul 2024 15:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[きょうのまなび（2024/07/29）]]></title>
+            <description><![CDATA[きょうのまなび（2024/07/29）]]></description>
+            <link>/posts/todays-lesson/20240729</link>
+            <guid isPermaLink="true">/posts/todays-lesson/20240729</guid>
+            <category><![CDATA[きょうのまなび GPT-Researcher GPT-Crawler mitosis 生成AI]]></category>
+            <dc:creator><![CDATA[You]]></dc:creator>
+            <pubDate>Sun, 28 Jul 2024 15:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[GPT Researcherをpipenvでインストールするメモ]]></title>
             <description><![CDATA[GPT ResearcherをMacにpipenvでインストールして、Pythonのプログラムから使えるようにしました]]></description>
@@ -16,20 +52,11 @@
             <pubDate>Sun, 28 Jul 2024 15:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[きょうのまなび（2024/07/29）]]></title>
-            <description><![CDATA[きょうのまなび（2024/07/29）]]></description>
-            <link>/posts/todays-lesson/20240729</link>
-            <guid isPermaLink="true">/posts/todays-lesson/20240729</guid>
-            <category><![CDATA[きょうのまなび]]></category>
-            <dc:creator><![CDATA[You]]></dc:creator>
-            <pubDate>Sun, 28 Jul 2024 15:00:00 GMT</pubDate>
-        </item>
-        <item>
             <title><![CDATA[きょうのまなび（2024/07/28）]]></title>
             <description><![CDATA[きょうのまなび（2024/07/28）]]></description>
             <link>/posts/todays-lesson/20240728</link>
             <guid isPermaLink="true">/posts/todays-lesson/20240728</guid>
-            <category><![CDATA[きょうのまなび]]></category>
+            <category><![CDATA[きょうのまなび GitHub VSCode]]></category>
             <dc:creator><![CDATA[You]]></dc:creator>
             <pubDate>Sat, 27 Jul 2024 15:00:00 GMT</pubDate>
         </item>
